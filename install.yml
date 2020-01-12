@@ -1,9 +1,5 @@
 ---
 - hosts: localhost
-  sudo: no
-  connection: ssh
-  remote_user: ubuntu
-  gather_facts: no
   tasks:
     - name: 1. install git
       shell: apt-get install git
