@@ -1,8 +1,8 @@
 ---
-#- hosts: CloudViews_DevEnv
+- hosts: CloudViews_DevEnv
 #  gather_facts: False
 #  become: true
-- sudo: no
+  sudo: no
   connection: ssh
   remote_user: ubuntu
   gather_facts: no
