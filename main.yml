@@ -1,5 +1,5 @@
 ---
-- hosts: CloudViews_DevEnv
+- hosts: localhost
 #  gather_facts: False
 #  become: true
   sudo: no
