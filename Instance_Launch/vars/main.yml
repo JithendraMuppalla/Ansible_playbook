@@ -3,6 +3,6 @@
 keypair: jithendra
 instance_type: t2.micro
 security_group: launch-wizard-1
-image: i-04fb758a679cdcf9c
+image: ami-0d03add87774b12c5
 region: us-east-2
 subnet: subnet-eeb1ab86
