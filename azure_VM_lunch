@@ -1,0 +1,17 @@
+---
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Create VM
+    azure_rm_virtualmachine:
+      resource_group: awx
+      name: testvm10
+      vm_size: Standard_DS1_v2
+      admin_username: vijay
+      admin_password: Vijay@1234
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.1'
+        version: latest
