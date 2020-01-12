@@ -1,0 +1,18 @@
+galaxy_info:
+  author: william.mckenzie@chevron.com
+  description: create iaas sql server
+  company: chevron
+
+  license: license (MIT)
+
+  min_ansible_version: 2.4
+
+  galaxy_tags:
+    - azure
+    - template
+    - iaas
+    - sqlserver
+
+dependencies:
+  - src: ssh://chevron@vs-ssh.visualstudio.com:22/AnsibleRoles/_git/ansible-role-prep-vm
+    scm: git

@@ -1,0 +1,9 @@
+---
+# vars file for ansible-role-sqlserver
+keypair: DevOps-Sujith
+instance_type: t2.micro
+security_group: launch-wizard-2
+image: ami-86c4ece6
+region: us-west-1
+subnet: subnet-ecfe6d8b
+privateip: 192.168.1.9

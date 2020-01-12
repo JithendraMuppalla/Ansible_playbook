@@ -1,0 +1,9 @@
+---
+# vars file for ansible-role-sqlserver
+keypair: tower
+instance_type: t2.micro
+security_group: default
+image: ami-d874e0a0
+region: us-west-2
+subnet: subnet-eeb643a5
+privateip: 172.31.44.30

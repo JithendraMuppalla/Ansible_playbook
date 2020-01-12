@@ -1,12 +1,7 @@
 ---
+# Create the resources
 - hosts: localhost
-#  gather_facts: False
-  connection: ssh
-  remote_user: ubuntu
-  gather_facts: no
-  tasks:
-    - name: 1.install git 
-      shell: apt-get install git
-      become: true
-      become_user: root
+  connection: local
 
+  roles:
+    - role: Instance_Launch

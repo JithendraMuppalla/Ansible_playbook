@@ -1,0 +1,25 @@
+---
+# defaults file for ansible-role-ssrs
+
+sqlserver_forest: "s02"
+sqlserver_default_service_account: "{{ sqlserver_forest }}\\svc-azuresql"
+sqlserver_default_service_password: "" 
+sqlserver_features:
+  - "SQLENGINE"
+
+sqlserver_single_drive: false
+
+# mnemonic for the version to install. For values, see the dictionary in
+# vars/main.yml
+sqlserver_version: "ent2016"
+
+sqlserver_security_mode: "SQL"
+sqlserver_sa_username: "sa"
+sqlserver_sa_password: "P@ssw0rd!Cvx123"
+
+# Server instance name
+sqlserver_instance_name:  "MSSQLSERVER"
+
+# Database collation
+sqlserver_collation: "SQL_Latin1_General_CP1_CI_AS"
+

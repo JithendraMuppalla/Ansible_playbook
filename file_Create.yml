@@ -1,0 +1,13 @@
+---
+- name: AWS Tag Management
+  hosts: localhost 
+  tasks:
+     - file:
+        path: /tmp/notify
+        state: directory
+     - lineinfile:
+         create: true
+         line: "Non Compliant Instances in NONPROD"
+         path: /tmp/noncompliantmachines.txt
+         state: present
+       name: "Create the noncompliant machines txt file for improperly tagged boxes"
