@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
     - name: 1. install git
-      apt: name=git state=latest install_recommends=yes
+      shell: apt-get install git
       become: true
     - name: 2. apt-module update
       shell: apt update
