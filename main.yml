@@ -1,0 +1,14 @@
+---
+#- hosts: CloudViews_DevEnv
+#  gather_facts: False
+#  become: true
+- sudo: no
+  connection: ssh
+  remote_user: ubuntu
+  gather_facts: no
+  tasks:
+    - name: 1. apt-module clean
+      shell: apt-get clean
+      become: true
+      become_user: root
+
