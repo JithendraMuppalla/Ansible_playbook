@@ -2,12 +2,12 @@
 - hosts: localhost
   tasks:
     - name: 1. install git
-      shell: apt-get install git
+      apt: name=git state=latest install_recommends=yes
       become: true
-      become_user: root
+
 
     - name: 2. apt-module update
-      shell: apt-get update
+      shell: apt update
       become: true
       become_user: root
 
