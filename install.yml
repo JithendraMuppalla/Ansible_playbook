@@ -6,10 +6,6 @@
   tasks:
     - name: 1. apt-module clean
       shell: apt-get clean
-      become: true
-      become_user: root
 
     - name: 2. apt-module update
       shell: apt-get update
-      become: true
-      become_user: root
