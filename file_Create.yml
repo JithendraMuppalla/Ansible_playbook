@@ -1,11 +1,12 @@
 ---
 - name: AWS Tag Management
   hosts: localhost 
+  remote_user: ubuntu
   tasks:
      - file:
         path: /home/ubuntu/notify
         state: directory
-        become_user: root
+
 
      - lineinfile:
          create: true
