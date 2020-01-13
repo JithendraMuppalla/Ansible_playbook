@@ -30,11 +30,6 @@
        name: "*"
        state: latest
 
-    - name: 6. insstall php
-      apt:
-        name: php
-        state: latest
-        install_recommends: yes
 
     - name: 7. insstall libapache2-mod-php7.0
       apt:
