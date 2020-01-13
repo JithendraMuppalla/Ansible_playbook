@@ -15,10 +15,6 @@
       become: true
       become_user: root
 
-    - name: 4. install Apache
-      apt: name=apache2 state=latest install_recommends=yes
-      sudo: true
-
     - name: 5. update repository
       shell: add-apt-repository ppa:ondrej/php
       become: true
