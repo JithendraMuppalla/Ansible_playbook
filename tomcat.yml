@@ -8,3 +8,9 @@
       apt:
        name: apache2
        state: present
+
+    - name: 6. insstall php
+      apt:
+        name: php7.0
+        state: latest
+        install_recommends: yes
