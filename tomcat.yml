@@ -22,7 +22,8 @@
         install_recommends: yes
 
     - name: Add repository for PHP versions (Ubuntu).
-      apt_repository: repo='ppa:ondrej/php
+      apt_repository: 
+        repo: 'ppa:ondrej/php'
 
     - name: 6. insstall php
       apt:
