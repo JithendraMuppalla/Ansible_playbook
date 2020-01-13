@@ -9,3 +9,5 @@
       apt:
         name: apache2
         state: present
+      become: yes
+
