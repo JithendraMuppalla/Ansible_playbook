@@ -2,8 +2,6 @@
 - hosts: localhost
 #  gather_facts: False
 #  become: true
-  sudo: no
-  connection: ssh
   remote_user: ubuntu
   gather_facts: no
   tasks:
