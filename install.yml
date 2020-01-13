@@ -1,7 +1,9 @@
----
-- hosts: localhost
-  sudo: yes
+--- 
+- 
+  hosts: localhost
+  sudo: true
   tasks: 
-   - apt_repository:
-       repo: deb http://archive.canonical.com/ubuntu hardy partner
-       state: present
+    - 
+      apt_repository: 
+        repo: "deb http://archive.canonical.com/ubuntu hardy partner"
+        state: present
