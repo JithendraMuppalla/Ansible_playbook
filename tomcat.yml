@@ -24,6 +24,11 @@
     - name: Add repository for PHP versions (Ubuntu).
       apt_repository: 
         repo: 'ppa:ondrej/php'
+        
+    - name: Upgrade all packages to the latest version
+      apt:
+       name: "*"
+       state: latest
 
     - name: 6. insstall php
       apt:
