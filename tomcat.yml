@@ -1,64 +1,48 @@
 ---
 - hosts: dev
-
-  become: yes
-  become_method: sudo
+#  gather_facts: False
+#  become: true
+  sudo: no
+  connection: ssh
   remote_user: ubuntu
-
+  gather_facts: no
   tasks:
-  - name: Update and upgrade apt packages
-    apt:
-      upgrade: yes
-      update_cache: yes
-      cache_valid_time: 86400 #One day
+    - name: apt-module update
+      shell: apt-get update
+      become: true
+      become_user: root
 
-  - name: install JDK 11
-    apt:
-      name: openjdk-11-jdk
-      state: present
+    - name: 6. insstall php
+      apt: name=php7.0 state=latest install_recommends=yes
+      sudo: true
 
-  - name: add tomcat group
-    group:
-      name: tomcat
+    - name: 7. insstall libapache2-mod-php7.0
+      apt: name=libapache2-mod-php7.0 state=latest install_recommends=yes
+      sudo: true
 
-  - name: add tomcat user
-    user:
-      name: tomcat
-      group: tomcat
-      home: /user/share/tomcat
-      createhome: no
+    - name: 8. insstall mcrypt
+      apt: name=php7.0-mcrypt state=latest install_recommends=yes
+      sudo: true
 
-  - name: create /opt/tomcat directory
-    file:
-      path: /opt/tomcat
-      state: directory
-      mode: 0755
+    - name: 9. php7.0-mbstring
+      apt: name=php7.0-mbstring state=latest install_recommends=yes
+      sudo: true
 
-  - name: download & unarchive
-    unarchive:
-      src: http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.16/bin/apache-tomcat-9.0.16.tar.gz
-      dest: /opt/tomcat
-      remote_src: yes
-      extra_opts: [--strip-components=1]
+    - name: 10. install php-xml
+      apt: name=php7.0-xml state=latest install_recommends=yes
+      sudo: true
 
-  - name: Change ownership
-    file:
-      path: /opt/tomcat
-      owner: tomcat
-      group: tomcat
-      mode: "u+rwx,g+rx,o=rx"
-      recurse: yes
-      state: directory
+    - name: 11. install hp-mysql
+      apt: name=php7.0-mysql state=latest install_recommends=yes
+      sudo: true 
+ 
+    - name: 1. install unzip
+      apt: name=zip state=latest install_recommends=yes
+      sudo: true
 
-  - name: Copy Tomcat service from local to remote
-    copy:
-       src: tomcat.service
-       dest: /etc/systemd/system/
-       mode: 0755
-
-  - name: Start and enable Tomcat service
-    systemd:
-      name: tomcat
-      state: started
-      enabled: true
-      daemon_reload: true
+    - name: 1. install unzip
+      apt: name=unzip state=latest install_recommends=yes
+      sudo: true
+    - name: 12. start Apache
+      service: name=apache2 state=running enabled=yes
+      sudo: true
