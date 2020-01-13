@@ -4,63 +4,7 @@
   remote_user: ubuntu
   gather_facts: no
   tasks:
-    - name: apt-module update
-      shell: apt-get update
-      become: true
-      become_user: root
-
-    - name: 6. insstall php
-      apt: 
-        name: php7.0 
-        state: latest 
-        install_recommends: yes
-      sudo: true
-
-    - name: 7. insstall libapache2-mod-php7.0
-      apt: 
-        name: libapache2-mod-php7.0 
-        state: latest 
-        install_recommends: yes
-      sudo: true
-
-    - name: 8. insstall mcrypt
-      apt: 
-        name: php7.0-mcrypt 
-        state: latest 
-        install_recommends: yes
-      sudo: true
-
-    - name: 9. php7.0-mbstring
-      apt: 
-        name: php7.0-mbstring 
-        state: latest 
-        install_recommends: yes
-      sudo: true
-
-    - name: 10. install php-xml
-      apt: 
-        name: php7.0-xml 
-        state: latest 
-        install_recommends: yes
-      sudo: true
-
-    - name: 11. install hp-mysql
-      apt: 
-        name: php7.0-mysql 
-        state: latest 
-        install_recommends: yes
-      sudo: true 
- 
-    - name: 1. install unzip
-      apt: 
-        name: zip 
-        state: latest 
-        install_recommends: yes
-      sudo: true
-
-    - name: 12. start Apache
-      service: 
-        name: apache2 
-        state: running 
-        enabled: yes
-      sudo: true
+    - name: Install apache httpd  (state=present is optional)
+      apt:
+       name: apache2
+       state: present
