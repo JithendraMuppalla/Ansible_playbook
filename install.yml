@@ -5,17 +5,7 @@
   remote_user: ubuntu
   gather_facts: no
   tasks:
-    - name: 1. apt-module clean
-      shell: apt-get clean
-      become: true
-      become_user: root
-
-    - name: 2. apt-module update
-      shell: apt-get update
-      become: true
-      become_user: root
-
-    - name: 5. update repository
-      shell: add-apt-repository ppa:ondrej/php
-      become: true
-      become_user: root
+    - name: Install apache httpd  (state=present is optional)
+      apt:
+        name: apache2
+        state: present
