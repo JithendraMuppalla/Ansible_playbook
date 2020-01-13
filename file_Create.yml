@@ -5,9 +5,12 @@
      - file:
         path: /home/ubuntu/notify
         state: directory
+        become_user: root
+
      - lineinfile:
          create: true
          line: "Non Compliant Instances in NONPROD"
          path: /home/ubuntu/notify/noncompliantmachines.txt
          state: present
+         become_user: root
        name: "Create the noncompliant machines txt file for improperly tagged boxes"
