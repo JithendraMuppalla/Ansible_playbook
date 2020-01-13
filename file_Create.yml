@@ -3,11 +3,11 @@
   hosts: localhost 
   tasks:
      - file:
-        path: /tmp/notify
+        path: /home/ubuntu/notify
         state: directory
      - lineinfile:
          create: true
          line: "Non Compliant Instances in NONPROD"
-         path: /tmp/noncompliantmachines.txt
+         path: /home/ubuntu/notify/noncompliantmachines.txt
          state: present
        name: "Create the noncompliant machines txt file for improperly tagged boxes"
