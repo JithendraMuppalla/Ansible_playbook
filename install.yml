@@ -2,6 +2,6 @@
 - hosts: localhost
   sudo: yes
   tasks: 
-   - name: Install add-apt-repastary
-     become: yes
-     apt: name=software-proprities-common state=latest
+   - apt_repository:
+       repo: deb http://archive.canonical.com/ubuntu hardy partner
+       state: present
