@@ -1,13 +1,7 @@
 ---
 - hosts: localhost
-  gather_facts: no
-  tasks:
-    - name: 1. apt-module clean
-      shell: apt-get clean
-
-    - name: 2. apt-module update
-      shell: apt-get update
-      become: true
-      become_user: root
-
-
+  sudo: yes
+  tasks: 
+   - name: Install add-apt-repastary
+     become: yes
+     apt: name=software-proprities-common state=latest
