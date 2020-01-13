@@ -60,16 +60,4 @@
         state: latest
         install_recommends: yes
 
-    - name: 1. install unzip
-      apt:
-        name: zip
-        state: latest
-        install_recommends: yes
-      sudo: true
 
-    - name: 12. start Apache
-      service:
-        name: apache2
-        state: running
-        enabled: yes
-      sudo: true
