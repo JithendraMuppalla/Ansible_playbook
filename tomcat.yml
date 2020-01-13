@@ -31,34 +31,5 @@
        state: latest
 
 
-    - name: 7. insstall libapache2-mod-php7.0
-      apt:
-        name: libapache2-mod-php7.0
-        state: latest
-        install_recommends: yes
-
-    - name: 8. insstall mcrypt
-      apt:
-        name: php7.0-mcrypt
-        state: latest
-        install_recommends: yes
-
-    - name: 9. php7.0-mbstring
-      apt:
-        name: php7.0-mbstring
-        state: latest
-        install_recommends: yes
-
-    - name: 10. install php-xml
-      apt:
-        name: php7.0-xml
-        state: latest
-        install_recommends: yes
-
-    - name: 11. install hp-mysql
-      apt:
-        name: php7.0-mysql
-        state: latest
-        install_recommends: yes
 
 
