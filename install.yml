@@ -4,6 +4,10 @@
   remote_user: ec2-user
   gather_facts: no
   tasks:
+    - name: upgrade all packages
+      yum:
+       name: '*'
+       state: latest
     - name: Upgrade all packages to the latest version
       yum:
        name: httpd
