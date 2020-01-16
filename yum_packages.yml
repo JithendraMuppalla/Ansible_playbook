@@ -14,5 +14,10 @@
       yum:
        name: "*"
        state: latest
+       
+    - name: install the latest version of Apache
+      yum:
+       name: httpd
+       state: latest
 
 
