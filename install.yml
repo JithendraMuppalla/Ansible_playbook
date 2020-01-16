@@ -1,30 +1,23 @@
 ---
-- hosts: dev
+- hosts: all
   connection: ssh
-  remote_user: ubuntu
+  remote_user: ec2-user
   gather_facts: no
   tasks:
     - name: Install apache httpd  (state=present is optional)
-      apt:
+      yum:
        name: apache2
        state: present
 
     - name: Upgrade all packages to the latest version
-      apt:
+      yum:
        name: "*"
        state: latest
 
     - name: 4. install Apache
-      apt:
-        name: apache2
+      yum:
+        name: git
         state: latest
         install_recommends: yes
 
-    - name: Add repository for PHP versions (Ubuntu).
-      apt_repository: 
-        repo: 'ppa:ondrej/php'
-        
-    - name: Upgrade all packages to the latest version
-      apt:
-       name: "*"
-       state: latest
+
