@@ -19,5 +19,14 @@
       yum:
        name: httpd
        state: latest
-
+       
+    - name: install the latest version of Apache
+      yum:
+       name: git
+       state: latest
+       
+    - name: install the latest version of Apache
+      yum:
+       name: zip
+       state: latest
 
