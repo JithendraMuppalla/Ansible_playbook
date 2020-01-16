@@ -4,10 +4,11 @@
   connection: ssh
   gather_facts: no
   tasks:
-    - name: Install apache httpd  (state=present is optional)
-      yum:
-       name: apache
-       state: present
+    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+      file:
+       path: /etc/foo.conf
+       state: touch
+       mode: u=rw,g=r,o=r
 
     - name: Upgrade all packages to the latest version
       yum:
