@@ -4,11 +4,6 @@
   remote_user: ec2-user
   gather_facts: no
   tasks:
-    - name: upgrade all packages
-      yum:
-       name: '*'
-       state: latest
-
     - name: install the latest version of Apache
       yum:
        name: httpd
