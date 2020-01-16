@@ -9,10 +9,12 @@
        name: '*'
        state: latest
 
-    - name: 4. install Apache
+    - name: Install a list of packages
       yum:
-        name: git
-        state: latest
-        install_recommends: yes
+       name:
+        - nginx
+        - postgresql
+        - postgresql-server
+       state: present
 
 
