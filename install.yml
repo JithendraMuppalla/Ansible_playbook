@@ -8,8 +8,7 @@
     - name: Change file ownership, group and permissions
       file:
        path: /etc/foo.conf
-       owner: foo
-       group: foo
-       mode: '0644'
+       state: touch
+       mode: u=rw,g=r,o=r
 
 
