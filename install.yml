@@ -9,7 +9,7 @@
        name: '*'
        state: latest
 
-- name: 4. install Apache
+    - name: 4. install Apache
       yum:
         name: git
         state: latest
