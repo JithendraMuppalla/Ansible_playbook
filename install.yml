@@ -6,7 +6,7 @@
   tasks:
     - name: Upgrade all packages to the latest version
       yum:
-       name: "*"
+       name: httpd
        state: latest
 
     - name: 4. install Apache
