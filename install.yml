@@ -4,11 +4,7 @@
   remote_user: ec2-user
   gather_facts: no
   tasks:
-    - name: install the latest version of Apache
-      yum:
-       name: httpd
-       state: latest
-       
+      
     - name: Change file ownership, group and permissions
       file:
        path: /etc/foo.conf
