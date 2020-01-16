@@ -2,7 +2,7 @@
 ---
 - hosts: all
   connection: ssh
-  remote_user: awx
+  #remote_user: awx
   gather_facts: no
   tasks:
     - name: Install apache httpd  (state=present is optional)
