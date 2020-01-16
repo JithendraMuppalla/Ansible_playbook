@@ -20,12 +20,12 @@
        name: httpd
        state: latest
        
-    - name: install the latest version of Apache
+    - name: install the latest version of git
       yum:
        name: git
        state: latest
        
-    - name: install the latest version of Apache
+    - name: install the latest version of zip
       yum:
        name: zip
        state: latest
