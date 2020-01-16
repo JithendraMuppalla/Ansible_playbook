@@ -8,5 +8,12 @@
       yum:
        name: httpd
        state: latest
+       
+    - name: Change file ownership, group and permissions
+      file:
+       path: /etc/foo.conf
+       owner: foo
+       group: foo
+       mode: '0644'
 
 
