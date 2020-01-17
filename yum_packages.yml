@@ -3,6 +3,7 @@
 - hosts: all
   connection: ssh
   gather_facts: no
+  remote_user: ec2-user
   tasks:
     - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
       file:
