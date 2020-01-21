@@ -38,7 +38,7 @@
     - name: install the latest version of zip
       yum:
        name: zip
+       state: latest
       become: true
       become_user: root 
-       state: latest
 
