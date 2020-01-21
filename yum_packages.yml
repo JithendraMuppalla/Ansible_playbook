@@ -7,16 +7,20 @@
 #  become_method: sudo
 #  remote_user: ec2-user
   tasks:
-   # - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
-   #   file:
-   #    path: /etc/foo.conf
-   #    state: touch
-   #    mode: u=rw,g=r,o=r
+    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+      file:
+       path: /etc/foo.conf
+       state: touch
+       mode: u=rw,g=r,o=r
+      become: true
+      become_user: root
 
     - name: Upgrade all packages to the latest version
       yum:
        name: "*"
        state: latest
+      become: true
+      become_user: root 
        
     - name: install the latest version of Apache
       yum:
