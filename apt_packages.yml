@@ -32,3 +32,5 @@
       apt:
        name: zip
        state: latest
+      become: true
+      become_user: root
