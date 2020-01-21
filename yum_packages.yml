@@ -13,30 +13,21 @@
        path: /etc/foo.conf
        state: touch
        mode: u=rw,g=r,o=r
-
-
     - name: Upgrade all packages to the latest version
       yum:
        name: "*"
        state: latest
-      become_user: root 
-       
     - name: install the latest version of Apache
       yum:
        name: httpd
        state: latest
-      become_user: root       
     - name: install the latest version of git
       yum:
        name: git
-       state: latest
-      become: true
-      become_user: root 
-       
+       state: latest  
     - name: install the latest version of zip
       yum:
        name: zip
        state: latest
-      become: true
-      become_user: root 
+
 
