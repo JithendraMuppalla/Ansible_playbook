@@ -26,14 +26,19 @@
       yum:
        name: httpd
        state: latest
-       
+      become: true
+      become_user: root       
     - name: install the latest version of git
       yum:
        name: git
        state: latest
+      become: true
+      become_user: root 
        
     - name: install the latest version of zip
       yum:
        name: zip
+      become: true
+      become_user: root 
        state: latest
 
